@@ -2,22 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "queimada-online/server.js",
+      "src": "JogoSocket/queimada-online/server.js",
       "use": "@vercel/node"
     },
     {
-      "src": "queimada-online/public/**",
+      "src": "JogoSocket/queimada-online/public/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/socket.io/(.*)",
-      "dest": "queimada-online/server.js"
+      "dest": "JogoSocket/queimada-online/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "queimada-online/public/"
+      "dest": "JogoSocket/queimada-online/public/"
     }
   ]
 }
