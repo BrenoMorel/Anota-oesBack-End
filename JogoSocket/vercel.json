@@ -1,0 +1,23 @@
+﻿{
+  "version": 2,
+  "builds": [
+    {
+      "src": "queimada-online/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "queimada-online/public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/socket.io/(.*)",
+      "dest": "queimada-online/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "queimada-online/public/"
+    }
+  ]
+}
